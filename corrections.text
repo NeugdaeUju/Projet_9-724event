@@ -8,10 +8,11 @@ Liste des corrections à réaliser :
         - Permettre de filtrer les events par catégories              OK
         - Carque card à une date (month)
         - Navigation sur les pages de la section "Nos réalisations"   OK
-    - Envoie du formulaire (affichage du message de confirmation)
-        - Permettre l'envoie du formulaire de contact
-        - Afficher le message de confirmation d'envoie 
-    - Titre de la page                                                 OK
+    - Envoie du formulaire (affichage du message de confirmation)     OK
+        - Permettre l'envoie du formulaire de contact                 OK
+        - Afficher le message de confirmation d'envoie                OK
+        - Tester le succes et l'echec de l'appel API                  OK
+    - Titre de la page                                                OK
     - logo dans le head
     - liens de navigation
     - images pied de page.
