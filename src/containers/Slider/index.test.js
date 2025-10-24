@@ -41,4 +41,20 @@ describe("When slider is created", () => {
       "Oeuvre à la coopération entre le secteur public et le privé."
     );
   });
-});
+  it("a unique key for the card is displayed", () => {
+    const {container} = render(<Slider events={data} />);
+    const slides = container.querySelectorAll(`[data-testid="slide"]`);
+    const keys = Array.from(slides).map(slide => slide.getAttribute('data-key'));
+    expect(keys.every(Boolean)).toBe(true);
+    const uniqueKeys = new Set(keys);
+    expect(uniqueKeys.size).toBe(keys.length);
+  });
+  it("a unique key for the radio button is displayed", () => {
+    const {container} = render(<Slider events={data} />);
+    const radios = container.querySelectorAll(`input[type="radio"][data-testid="radio"]`);
+    const keys = Array.from(radios).map(r => r.getAttribute('data-key'));
+    expect(keys.every(Boolean)).toBe(true);
+    expect(new Set(keys).size).toBe(keys.length);
+
+  })
+})
