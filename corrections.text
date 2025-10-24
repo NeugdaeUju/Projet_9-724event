@@ -2,12 +2,14 @@ Liste des corrections à réaliser :
     - Le carroussel doit s'afficher par date (décroissante)           Partiel
         - Retirer l'espace blanc en fin de carroussel                 OK
         - Inverser l'ordre des images du slider                       OK
-        - Ajouter un key aux images                                   En cours
+        - Ajouter un key aux images                                   OK
         - Changer de dot en fonction du slide                         OK
     - Les filtres de la sections "Nos réalisations".
+        - Permettre de filtrer les events par catégories              OK
+        - Carque card à une date (month)
+        - Navigation sur les pages de la section "Nos réalisations"
     - Envoie du formulaire (affichage du message de confirmation)
     - Titre de la page                                                 OK
     - logo dans le head
     - liens de navigation
-    - pages de la secton "nos réalisations"
     - images pied de page.
