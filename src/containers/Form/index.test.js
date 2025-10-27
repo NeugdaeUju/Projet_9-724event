@@ -3,11 +3,11 @@ import Form from "./index";
 
 describe("When Events is created", () => {
   it("a list of event card is displayed", async () => {
-    render(<Form />);
-    await screen.findByText("Email");
-    await screen.findByText("Nom");
-    await screen.findByText("Prénom");
-    await screen.findByText("Personel / Entreprise");
+    const {} = render(<Form />);
+    expect(await screen.findByText("Email")).toBeInTheDocument();
+    expect(await screen.findByText("Nom")).toBeInTheDocument();
+    expect(await screen.findByText("Prénom")).toBeInTheDocument();
+    expect(await screen.findByText("Personel / Entreprise")).toBeInTheDocument();
   });
 
   describe("and a click is triggered on the submit button", () => {
