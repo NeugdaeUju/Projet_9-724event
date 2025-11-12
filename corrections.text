@@ -1,0 +1,19 @@
+Liste des corrections à réaliser :
+    - Le carroussel doit s'afficher par date (décroissante)           ok
+        - Retirer l'espace blanc en fin de carroussel                 OK
+        - Inverser l'ordre des images du slider                       OK
+        - Ajouter un key aux images                                   OK
+        - Changer de dot en fonction du slides                        OK
+        - Ajouter les bons mois sur les slides                        OK
+    - Les filtres de la sections "Nos réalisations".                  ok
+        - Permettre de filtrer les events par catégories              OK
+        - Chaque card à une date (month)                              OK
+        - Navigation sur les pages de la section "Nos réalisations"   OK
+    - Envoie du formulaire (affichage du message de confirmation)     OK
+        - Permettre l'envoie du formulaire de contact                 OK
+        - Afficher le message de confirmation d'envoie                OK
+        - Tester le succes et l'echec de l'appel API                  OK
+    - Titre de la page                                                OK
+    - logo dans le head
+    - liens de navigation                                             OK
+    - images pied de page.                                            OK

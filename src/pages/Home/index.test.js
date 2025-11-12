@@ -1,13 +1,14 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
 
-describe("When Form is created", () => {
+
+describe("When Home is created", () => {
   it("a list of fields card is displayed", async () => {
     render(<Home />);
-    await screen.findByText("Email");
-    await screen.findByText("Nom");
-    await screen.findByText("Prénom");
-    await screen.findByText("Personel / Entreprise");
+    expect(await screen.findByText("Email")).toBeInTheDocument();
+    expect(await screen.findByText("Nom")).toBeInTheDocument();
+    expect(await screen.findByText("Prénom")).toBeInTheDocument();
+    expect(await screen.findByText("Personel / Entreprise")).toBeInTheDocument();
   });
 
   describe("and a click is triggered on the submit button", () => {

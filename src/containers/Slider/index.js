@@ -8,26 +8,33 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+    new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
   );
-  const nextCard = () => {
+ const nextCard = () => {
+    if (!byDateDesc || !byDateDesc.length) return; // protège si data pas encore dispo
+
     setTimeout(
-      () => setIndex(index < byDateDesc.length ? index + 1 : 0),
+      () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
       5000
     );
   };
+
   useEffect(() => {
     nextCard();
-  });
+  }, [index, byDateDesc]); // ajoute byDateDesc en dépendance
+
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <>
+        <div key={`${event.title}-${event.id}`}
+        data-key={`${event.title}-${event.id}`}>
           <div
-            key={event.title}
+            key={`slide-${event.title}`}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
+            data-testid="slide"
+            data-key={event.title}
           >
             <img src={event.cover} alt="forum" />
             <div className="SlideCard__descriptionContainer">
@@ -40,17 +47,23 @@ const Slider = () => {
           </div>
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
-                <input
-                  key={`${event.id}`}
-                  type="radio"
-                  name="radio-button"
-                  checked={idx === radioIdx}
-                />
-              ))}
+              {byDateDesc.map((_, radioIndex) => {
+                const uniqueKey = `radio-${event.id}-${event.title}-${radioIndex}`;
+                return (
+                  <input
+                    key={uniqueKey}
+                    type="radio"
+                    name="radio-button"
+                    checked={index === radioIndex}
+                    data-testid="radio"
+                    data-key={event.id}
+                    readOnly
+                  />
+                );
+              })}
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
