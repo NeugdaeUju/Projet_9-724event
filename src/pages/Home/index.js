@@ -13,12 +13,7 @@ import { useData } from "../../contexts/DataContext";
 import "./style.scss";
 
 const Page = () => {
-  const { data } = useData();
-
-  // Calculer le dernier événement (le plus récent)
-  const lastEvent = data?.events
-    ?.slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))?.[0];
+  const { lastEvent } = useData();
 
   return (
     <>
